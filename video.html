@@ -18,11 +18,11 @@
     var video = document.getElementById("video");
     var canvas = document.getElementById("canvas")
     var context = canvas.getContext("2d");
-    CHeight = video.clientHeight //获取屏幕大小让canvas自适应
     CWidth = video.clientWidth;
-           canvas.width = CWidth;
-           canvas.height = CHeight;
-   
+    CHeight = video.clientHeight //获取屏幕大小让canvas自适应
+    alert(CWidth)
+    canvas.width = CWidth;
+    canvas.height = CHeight;
     // 老的浏览器可能根本没有实现 mediaDevices，所以我们可以先设置一个空的对象
     if (navigator.mediaDevices === undefined) {
         navigator.mediaDevices = {};
