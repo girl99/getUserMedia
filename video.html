@@ -15,10 +15,10 @@
 <canvas id="canvas"></canvas>
 <script>
  
-    let video = document.getElementById("video");
-    let canvas = document.getElementById("canvas");
-    CHeight = video.clientHeight, //获取屏幕大小让canvas自适应
-               CWidth = video.clientWidth;
+    var video = document.getElementById("video");
+    var canvas = document.getElementById("canvas")
+    CHeight = video.clientHeight //获取屏幕大小让canvas自适应
+    CWidth = video.clientWidth;
            canvas.width = CWidth;
            canvas.height = CHeight;
    
@@ -70,7 +70,7 @@
     //注册拍照按钮的单击事件
     document.getElementById("capture").addEventListener("click", function () {
         //绘制画面
-        context.drawImage(video, 0, 0, width, height);
+        context.drawImage(video, 0, 0, CWidth , CHeight);
     });
 </script>
 </body>
