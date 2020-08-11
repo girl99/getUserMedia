@@ -6,7 +6,7 @@
     <title>拍照</title>
 </head>
 <body>
-<video id="video" autoplay="autoplay"></video>
+<video id="video" autoplay="autoplay"  style='object-fit:fill'></video>
 <!--拍照按钮-->
 <div>
     <button id="capture">拍照</button>
@@ -14,15 +14,13 @@
 <!--描绘video截图-->
 <canvas id="canvas"></canvas>
 <script>
-   var height = window.screen.availHeight
-	
-	var width = window.screen.availWidth
+ 
     let video = document.getElementById("video");
     let canvas = document.getElementById("canvas");
-    video.style.height = height +"px"
-    video.style.width = width +"px"
-    canvas.style.height = height +"px"
-    canvas.style.width = width +"px"
+    CHeight = video.clientHeight, //获取屏幕大小让canvas自适应
+               CWidth = video.clientWidth;
+           canvas.width = CWidth;
+           canvas.height = CHeight;
    
     // 老的浏览器可能根本没有实现 mediaDevices，所以我们可以先设置一个空的对象
     if (navigator.mediaDevices === undefined) {
